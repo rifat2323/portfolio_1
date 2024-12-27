@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import BigNav from "@/components/custom/Navar/BigNav";
+import Footer from "@/components/custom/Footer";
+import MobileNav from "@/components/custom/Navar/SmallNav";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -25,9 +28,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased w-full  `}
       >
+        <BigNav/>
+        <MobileNav/>
         {children}
+        <Footer/>
       </body>
     </html>
   );
